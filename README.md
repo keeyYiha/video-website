@@ -58,3 +58,13 @@ frontend
 vendor/                  contains dependent 3rd-party packages
 environments/            contains environment-based overrides
 ```
+
+初始化第三方库：
+=============
+```
+composer install 
+如提示：
+Your requirements could not be resolved to an installable set of packages.
+则用：
+composer install --ignore-platform-reqs
+```
