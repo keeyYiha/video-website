@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.23, for linux-glibc2.12 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.22, for macos10.13 (x86_64)
 --
--- Host: localhost    Database: video
+-- Host: localhost    Database: video-website
 -- ------------------------------------------------------
--- Server version	5.7.23
+-- Server version	5.7.22
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -14,6 +14,14 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Current Database: `video-website`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `video-website` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
+
+USE `video-website`;
 
 --
 -- Table structure for table `user`
@@ -28,8 +36,8 @@ CREATE TABLE `user` (
   `auth_key` varchar(255) NOT NULL,
   `password_hash` varchar(255) NOT NULL,
   `password_reset_token` varchar(255) NOT NULL,
-  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  `created_at` int(11) DEFAULT '0',
+  `updated_at` int(11) DEFAULT '0',
   `email` varchar(255) DEFAULT '',
   `status` int(11) DEFAULT '0',
   PRIMARY KEY (`id`)
@@ -42,7 +50,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'bayer.hudson','HP187Mvq7Mmm3CTU80dLkGmni_FUH_lR','$2y$13$EjaPFBnZOQsHdGuHI.xvhuDp1fHpo8hKRSk6yshqa9c5EG8s3C3lO','ExzkCOaYc1L8IOBs4wdTGGbgNiG3Wz1I_1402312317','2018-08-25 11:59:49','2018-08-25 11:59:49','',10);
+INSERT INTO `user` VALUES (1,'bayer.hudson','HP187Mvq7Mmm3CTU80dLkGmni_FUH_lR','$2y$13$EjaPFBnZOQsHdGuHI.xvhuDp1fHpo8hKRSk6yshqa9c5EG8s3C3lO','ExzkCOaYc1L8IOBs4wdTGGbgNiG3Wz1I_1402312317',1499900000,1499900000,'',10);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +63,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-09-04 10:04:30
+-- Dump completed on 2018-09-05  9:02:18

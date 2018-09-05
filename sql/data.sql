@@ -1,3 +1,5 @@
+
+
 create table `user`
 (
 `id` int(11) NOT NULL,
@@ -14,16 +16,16 @@ AUTO_INCREMENT=1
 CHARACTER SET utf8mb4 
 COLLATE utf8mb4_general_ci;
 
-//修改`_id` 为自增长
-ALTER TABLE user CHANGE `_id` `_id` int(11) NOT NULL AUTO_INCREMENT;
+#修改`_id` 为自增长
+ALTER TABLE user CHANGE `id` `id` int(11) NOT NULL AUTO_INCREMENT;
 
-//修改自增长的开始
+#修改自增长的开始
 ALTER TABLE user AUTO_INCREMENT=1;
 
-//删除自增长
+#删除自增长
 Alter table tb change id id int(10);
 
-//删除主建
+#删除主建
 Alter table tb drop primary key;
 
 INSERT INTO user (
@@ -39,6 +41,3 @@ VALUES
 "$2y$13$EjaPFBnZOQsHdGuHI.xvhuDp1fHpo8hKRSk6yshqa9c5EG8s3C3lO",
 "ExzkCOaYc1L8IOBs4wdTGGbgNiG3Wz1I_1402312317"
 );
-
-
-gdcg1996
