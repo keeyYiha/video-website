@@ -19,6 +19,7 @@ return [
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
+            'loginUrl' => ['site/login'],
             'identityCookie' => ['name' => '_identity-backend', 'httpOnly' => true],
         ],
         'session' => [
@@ -42,9 +43,27 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'login' => 'site/login',
             ],
         ],
         
+    ],
+    'as access' => [
+        'class' => \yii\filters\AccessControl::class,
+        'rules' => [
+            [ //未登录则跳转到登录界面
+                'allow' => true,
+                'actions' => ['login'],
+                'roles' => ['?'],
+            ],
+            [ //已登录用户
+                'allow' => true,
+                'roles' => ['@'],
+            ]
+        ],
+        // 'allowActions' => [
+        //     '/site/logout'
+        // ],
     ],
     'params' => $params,
 ];
