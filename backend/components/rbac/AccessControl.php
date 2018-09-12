@@ -29,7 +29,7 @@ class AccessControl extends \yii\filters\AccessControl
         $roles = $dbMgr->getRolesByUser($userId);
         $deny = false;
         foreach ($roles as $key => $value) {
-            if ($dbMgr->checkAccess($userId, $key, ['action' => $action])) {
+            if ($user->can($key, ['action' => $action])) {
                 $deny = true;
                 break;
             }
