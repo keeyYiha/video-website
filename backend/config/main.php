@@ -46,20 +46,26 @@ return [
                 'login' => 'site/login',
             ],
         ],
+        'authManager' => [
+            'class' => \backend\components\rbac\DbManager::class,
+            // 'defaultRoles' => ['admin', 'author'],
+            // uncomment if you want to cache RBAC items hierarchy
+            // 'cache' => 'cache',
+        ],
         
     ],
     'as access' => [
-        'class' => \yii\filters\AccessControl::class,
+        'class' => \backend\components\rbac\AccessControl::class,
         'rules' => [
             [ //未登录则跳转到登录界面
                 'allow' => true,
                 'actions' => ['login'],
                 'roles' => ['?'],
             ],
-            [ //已登录用户
-                'allow' => true,
-                'roles' => ['@'],
-            ]
+            // [ //已登录用户
+            //     'allow' => true,
+            //     'roles' => ['@'],
+            // ]
         ],
         // 'allowActions' => [
         //     '/site/logout'

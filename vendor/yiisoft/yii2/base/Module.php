@@ -637,7 +637,6 @@ class Module extends ServiceLocator
         if (strpos($className, '-') !== false || !class_exists($className)) {
             return null;
         }
-
         if (is_subclass_of($className, 'yii\base\Controller')) {
             $controller = Yii::createObject($className, [$id, $this]);
             return get_class($controller) === $className ? $controller : null;
