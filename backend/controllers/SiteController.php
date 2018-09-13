@@ -50,6 +50,7 @@ class SiteController extends \yii\web\Controller
             return $this->goHome();
         }
 
+        $this->layout='@backend/views/layouts/main-login.php';
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             return $this->goBack();
