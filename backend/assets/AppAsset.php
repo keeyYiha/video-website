@@ -15,10 +15,8 @@ class AppAsset extends AssetBundle
 
     public $css = [
         'layouts/css/layouts.css',
-        'layouts/css/font-awesome.min.css',
-        'layouts/css/htmleaf-demo.css',
-        'layouts/css/jquery.mCustomScrollbar.min.css',
-        'layouts/css/normalize.css',
+        // 'layouts/css/font-awesome.min.css',
+        // 'layouts/css/jquery.mCustomScrollbar.min.css',
     ];
     public $js = [
         'layouts/js/custom.js',

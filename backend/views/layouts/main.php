@@ -40,7 +40,7 @@ AppAsset::register($this);
         <!-- sidebar-header  -->
         <div class="sidebar-header">
             <div class="user-pic">
-                <img class="img-responsive img-rounded" src="img/user.jpg" alt="">
+                <img class="img-responsive img-rounded" src="/img/user.jpg" alt="">
             </div>
             <div class="user-info">
                 <span class="user-name">Jhon <strong>Smith</strong></span>
@@ -177,18 +177,18 @@ AppAsset::register($this);
         <?= Alert::widget() ?>
         <?= $content ?>
       </div>
+
+      <footer class="footer">
+          <div class="container">
+              <p class="pull-left">&copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?></p>
+
+              <p class="pull-right"><?= Yii::powered() ?></p>
+          </div>
+      </footer>
     </main>
 
   </div>
 </div>
-
-<footer class="footer">
-    <div class="container">
-        <p class="pull-left">&copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?></p>
-
-        <p class="pull-right"><?= Yii::powered() ?></p>
-    </div>
-</footer>
 
 <?php $this->endBody() ?>
 </body>
