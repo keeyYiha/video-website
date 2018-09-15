@@ -13,6 +13,7 @@ return [
     'bootstrap' => ['log'],
     'modules' => [
         'admin' => ['class' => \backend\modules\admin\Module::class],
+        'content' => ['class' => \backend\modules\content\Module::class],
     ],
     'components' => [
         'request' => [
