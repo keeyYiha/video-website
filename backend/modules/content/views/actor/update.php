@@ -18,4 +18,6 @@ $this->params['breadcrumbs'][] = 'Update';
         'model' => $model,
     ]) ?>
 
+    <?= json_encode($model->getErrors()) ?>
+
 </div>

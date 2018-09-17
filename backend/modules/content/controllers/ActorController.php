@@ -7,6 +7,7 @@ use backend\modules\content\models\Actor;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
+use yii\web\UploadedFile;
 use yii\filters\VerbFilter;
 
 /**
@@ -66,8 +67,16 @@ class ActorController extends Controller
     {
         $model = new Actor();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if (Yii::$app->request->isPost) {
+            $model->avatarFile = UploadedFile::getInstance($model, 'avatarFile');
+            if (!$model->upload()) {
+                return '文件上传失败';
+            }
+            $load = $model->load(Yii::$app->request->post());
+            $save = $model->save();
+            if ($load && $save) {
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
         }
 
         return $this->render('create', [
@@ -86,8 +95,16 @@ class ActorController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if (Yii::$app->request->isPost) {
+            $model->avatarFile = UploadedFile::getInstance($model, 'avatarFile');
+            if (!$model->upload()) {
+                return '文件上传失败';
+            }
+            $load = $model->load(Yii::$app->request->post());
+            $save = $model->save();
+            if ($load && $save) {
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
         }
 
         return $this->render('update', [

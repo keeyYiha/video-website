@@ -5,18 +5,22 @@ namespace backend\modules\content\models;
 use Yii;
 use yii\db\ActiveRecord;
 use yii\behaviors\TimestampBehavior;
+use yii\web\UploadedFile;
 
 /**
  * This is the model class for table "cont_actor".
  *
  * @property int $id
  * @property string $name
+ * @property string $avatar
  * @property int $gender
+ * @property int $created_at
+ * @property int $updated_at
  */
 class Actor extends ActiveRecord
 {
 
-    public $imageFile;
+    public $avatarFile;
 
     public function behaviors()
     {
@@ -46,12 +50,12 @@ class Actor extends ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'name', 'avatar', 'gender', 'updated_at', 'created_at'], 'required'],
-            [['id', 'gender', 'updated_at', 'created_at'], 'integer'],
+            [['name', 'gender'], 'required'],
+            [['id', 'gender'], 'integer'],
             [['name'], 'string', 'max' => 128],
             [['avatar'], 'string', 'max' => 256],
             [['id'], 'unique'],
-            [['imageFile'], 'file', 'skipOnEmpty' => false, 'extensions' => 'mp4'],
+            [['avatarFile'], 'file', 'skipOnEmpty' => false, 'extensions' => 'jpg, png'],
         ];
     }
 
@@ -65,16 +69,36 @@ class Actor extends ActiveRecord
             'name' => 'Name',
             'avatar' => 'Avatar',
             'gender' => 'Gender',
-            'imageFile' => 'Image File',
+            'avatarFile' => 'Video File',
             'updated_at' => 'Updated At',
             'created_at' => 'Created At',
         ];
     }
+
+    public function validate($attributeNames = null, $clearErrors = true)
+    {
+        if ($attributeNames === null) {
+            $attributeNames = $this->activeAttributes();
+        }
+        $key = array_search("avatarFile", $attributeNames);
+        if ($key) {
+            array_splice($attributeNames, $key, 1);
+        }
+
+        return parent::validate($attributeNames, $clearErrors);
+    }
+
+    public function fileValidate($attributeNames)
+    {
+        return parent::validate($attributeNames);
+    }
     
     public function upload()
     {
-        if ($this->validate()) {
-            $this->imageFile->saveAs('/Users/shanyou_cyh/data/assets/' . $this->imageFile->baseName . '.' . $this->imageFile->extension);
+        if ($this->fileValidate(['avatarFile'])) {
+            $url = 'static/assets/content/avatar/' . $this->avatarFile->baseName . '.' . $this->avatarFile->extension;
+            $this->avatarFile->saveAs($url);
+            $this->avatar = $url;
             return true;
         } else {
             return false;
