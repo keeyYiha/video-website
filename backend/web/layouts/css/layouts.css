@@ -549,7 +549,7 @@ a.desc:after {
     display: inline-block;
 }
 
-.sidebar-wrapper .sidebar-menu ul li a{
+.sidebar-wrapper .sidebar-menu li a{
     display: inline-block;
     width: 100%;
     color: #9c9c9c;
@@ -559,7 +559,7 @@ a.desc:after {
     padding: 5px 30px 5px 20px;
 }
 
-.sidebar-wrapper .sidebar-menu ul li:hover > a{
+.sidebar-wrapper .sidebar-menu li:hover > a{
     color: #ccc;
 }
 
@@ -623,8 +623,8 @@ a.desc:after {
 
 }
 
-.sidebar-wrapper .sidebar-menu ul li a span.label,
-.sidebar-wrapper .sidebar-menu ul li a span.badge{
+.sidebar-wrapper .sidebar-menu li a span.label,
+.sidebar-wrapper .sidebar-menu li a span.badge{
     float: right;
     margin-top: 7px;
     margin-left:5px;

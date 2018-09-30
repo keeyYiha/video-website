@@ -8,13 +8,12 @@ use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
+use yii\widgets\Menu;
 use common\widgets\Alert;
 use backend\components\Helper;
 use backend\components\MenuHelper;
 
-$leftMenu = MenuHelper::getLeftMenus(Yii::$app->user->id, Yii::$app->controller->getRoute());
-// echo json_encode($leftMenu);
-// exit();
+echo json_encode(MenuHelper::getAssignedMenu(Yii::$app->user->id));
 
 AppAsset::register($this);
 ?>
@@ -68,12 +67,60 @@ AppAsset::register($this);
         </div>
 
         <!-- sidebar-menu  -->
-        <?php
-          // echo json_encode($leftMenu);
-          echo \backend\components\widgets\Menu::widget([
-            'items' => $leftMenu
-          ]);
-        ?>
+        <div class="sidebar-menu">
+            <ul>
+                <li class="header-menu"><span>Dropdown  menu</span></li>
+                <li class="sidebar-dropdown">
+                    <a  href="#" ><i class="fa fa-tv"></i><span>Menu 1</span><span class="label label-danger">New</span></a>
+                    <div class="sidebar-submenu">
+                        <ul>
+                            <li><a href="#">submenu 1 <span class="label label-success">10</span></a> </li>
+                            <li><a href="#">submenu 2</a></li>
+                            <li><a href="#">submenu 3</a></li>
+                            <li><a href="#">submenu 4</a></li>
+                        </ul>
+                    </div>
+                </li>                  
+                <li class="sidebar-dropdown">
+                    <a href="#"><i class="fa fa-photo"></i><span>Menu 2</span><span class="badge">3</span></a>
+                    <div class="sidebar-submenu">
+                        <ul>
+                            <li><a href="#">submenu 1 <span class="badge">2</span></a></li>
+                            <li><a href="#">submenu 2</a></li>
+                            <li><a href="#">submenu 3</a></li>
+                            <li><a href="#">submenu 4</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="sidebar-dropdown">
+                    <a href="#"><i class="fa fa-bar-chart-o"></i><span>Menu 3</span></a>
+                    <div class="sidebar-submenu">
+                        <ul>
+                            <li><a href="#">submenu 1</a></li>
+                            <li><a href="#">submenu 2</a></li>
+                            <li><a href="#">submenu 3</a></li>
+                            <li><a href="#">submenu 4</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="sidebar-dropdown">
+                    <a href="#"><i class="fa fa-diamond"></i><span>Menu 4</span></a>
+                    <div class="sidebar-submenu">
+                        <ul>
+                            <li><a href="#">submenu 1</a></li>
+                            <li><a href="#">submenu 2</a></li>
+                            <li><a href="#">submenu 3</a></li>
+                            <li><a href="#">submenu 4</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="header-menu"><span>Simple menu</span></li>
+                <li><a href="#"><i class="fa fa-tv"></i><span>Menu 1</span></a></li>                   
+                <li><a href="#"><i class="fa fa-photo"></i><span>Menu 2</span></a></li>
+                <li><a href="#"><i class="fa fa-bar-chart-o"></i><span>Menu 3</span></a></li>
+                <li><a href="#"><i class="fa fa-diamond"></i><span>Menu 4</span></a></li>
+            </ul>
+        </div>        
       </div><!-- sidebar-content  -->
 
       <div class="sidebar-footer">

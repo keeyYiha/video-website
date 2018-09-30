@@ -50,28 +50,36 @@ return [
             ],
         ],
         'authManager' => [
-            'class' => \backend\components\rbac\DbManager::class,
+            'class' => \backend\components\DbManager::class,
             // 'defaultRoles' => ['admin', 'author'],
             // uncomment if you want to cache RBAC items hierarchy
             // 'cache' => 'cache',
         ],
+        'i18n' => [
+            'translations' => [
+                'rbac-admin' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'sourceLanguage' => 'zh-CN',
+                ]
+            ]
+        ]
         
     ],
     'as access' => [
-        'class' => \backend\components\rbac\AccessControl::class,
-        'rules' => [
-            [ //未登录则跳转到登录界面
-                'allow' => true,
-                'actions' => ['login'],
-                'roles' => ['?'],
-            ],
-            // [ //已登录用户
-            //     'allow' => true,
-            //     'roles' => ['@'],
-            // ]
+        'class' => \backend\components\AccessControl::class,
+        'allowActions' => [
+            'site/logout'
         ],
-        // 'allowActions' => [
-        //     '/site/logout'
+        // 'rules' => [
+        //     [ //未登录则跳转到登录界面
+        //         'allow' => true,
+        //         'actions' => ['login'],
+        //         'roles' => ['?'],
+        //     ],
+        //     [ //已登录用户
+        //         'allow' => true,
+        //         'roles' => ['@'],
+        //     ]
         // ],
     ],
     'params' => $params,
