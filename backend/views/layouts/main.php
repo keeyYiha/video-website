@@ -55,7 +55,7 @@ AppAsset::register($this);
 
         <!-- sidebar-menu  -->
         <?php
-          $leftMenu = MenuHelper::getLeftMenus(Yii::$app->user->id, Yii::$app->controller->getRoute());
+          $leftMenu = MenuHelper::getLeftMenus(Yii::$app->user->id);
           echo \backend\components\widgets\Menu::widget([
             'items' => $leftMenu
           ]);
@@ -95,7 +95,7 @@ AppAsset::register($this);
               <input type="text" class="form-control" placeholder="Search...">
             </form> -->
             <?php
-                $topMenu = MenuHelper::getTopMenus(Yii::$app->user->id, Yii::$app->controller->getRoute());
+                $topMenu = MenuHelper::getTopMenus(Yii::$app->user->id);
 
                 if (!Yii::$app->user->isGuest) {
                     $topMenu[] = [

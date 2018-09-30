@@ -227,9 +227,11 @@ class MenuHelper
      * @param  array $route  current route
      * @return array
      */
-    public static function getLeftMenus($userId, $route)
+    public static function getLeftMenus($userId)
     {
-        $route = '/'.$route;
+        $route = self::parseRoute(Yii::$app->controller->getRoute())[0];
+        $routeIndex = '/'.substr($route, 0, strrpos($route, '/')).'/index';
+
         $config = Configs::instance();
 
         /* @var $manager \yii\rbac\BaseManager */
@@ -238,7 +240,7 @@ class MenuHelper
 
         $currId = 0;
         foreach ($menus as $menu) {
-            if ($menu['route'] === $route) {
+            if ($menu['route'] === $routeIndex) {
                 $currId = $menu['id'];
                 break;
             }
@@ -253,8 +255,9 @@ class MenuHelper
         return $leftMenus;
     }
 
-    public static function getTopMenus($userId, $route)
+    public static function getTopMenus($userId)
     {
+        $route = Yii::$app->controller->getRoute();
         $menus = self::getAssignedMenu($userId, $root = null, $callback = null, $refresh = false);
         $topMenus = [];
         foreach ($menus as $menu) {
