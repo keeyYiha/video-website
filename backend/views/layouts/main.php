@@ -12,10 +12,6 @@ use common\widgets\Alert;
 use backend\components\Helper;
 use backend\components\MenuHelper;
 
-$leftMenu = MenuHelper::getLeftMenus(Yii::$app->user->id, Yii::$app->controller->getRoute());
-// echo json_encode($leftMenu);
-// exit();
-
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -57,19 +53,9 @@ AppAsset::register($this);
             </div>
         </div>
 
-        <!-- sidebar-search  -->
-        <div class="sidebar-search">
-            <div>                   
-                <div class="input-group">                          
-                    <input type="text" class="form-control search-menu" placeholder="Search for...">
-                    <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                </div>
-            </div>                    
-        </div>
-
         <!-- sidebar-menu  -->
         <?php
-          // echo json_encode($leftMenu);
+          $leftMenu = MenuHelper::getLeftMenus(Yii::$app->user->id, Yii::$app->controller->getRoute());
           echo \backend\components\widgets\Menu::widget([
             'items' => $leftMenu
           ]);
@@ -108,26 +94,25 @@ AppAsset::register($this);
             <!-- <form class="navbar-form navbar-right">
               <input type="text" class="form-control" placeholder="Search...">
             </form> -->
-            <ul class="nav navbar-nav">
-              <?php
-                  $value = [
-                      ['url' => '/', 'name' => '首页'],
-                      ['url' => '/gii', 'name' => 'gii'],
-                  ];
-                  if (!Yii::$app->user->isGuest) {
-                      $value[] = ['url' => '/site/logout', 'name' => Yii::$app->user->identity->username];
-                  }
+            <?php
+                $topMenu = MenuHelper::getTopMenus(Yii::$app->user->id, Yii::$app->controller->getRoute());
 
-                  $html = "";
-                  foreach ($value as $key => $value) {
-                      $html .= "<li><a href='{$value['url']}'>{$value['name']}</a></li>";
-                  }
-                  echo $html;
-              ?>
-            </ul>
+                if (!Yii::$app->user->isGuest) {
+                    $topMenu[] = [
+                      'label' => Yii::$app->user->identity->username,
+                      'url' => ['/site/logout'],
+                    ];
+                }
+
+                echo Nav::widget([
+                  'items' => $topMenu,
+                  'options' => ['class' => 'navbar-nav'],
+                ]);
+            ?>
           </div>
         </div>
       </nav>
+
       <div class="container-fluid">
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],

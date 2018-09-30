@@ -1,25 +1,25 @@
 
 后台管理源自：
-=============
+-------------
 ```
 https://github.com/mdmsoft/yii2-admin
 ```
 
 
 初始化第三方库：
-=============
+-------------
 ```
 composer install 
-如提示：
-Your requirements could not be resolved to an installable set of packages.
-则用：
+
+or (Your requirements could not be resolved to an installable set of packages.)
+
 composer install --ignore-platform-reqs
 ```
 
 nginx配置：
-=============
+-------------
 
-frontend.conf
+### frontend.conf
 
 ```
 server{
@@ -51,7 +51,7 @@ server{
 }
 ```
 
-backend.conf
+### backend.conf
 
 ```
 server{

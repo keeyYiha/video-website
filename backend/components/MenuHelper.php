@@ -249,13 +249,23 @@ class MenuHelper
             $requireds = self::requiredParent([$currId], $menus);
             $leftMenus = self::getAssignedMenu($userId, end($requireds));
         }
-            // echo $currId;
 
         return $leftMenus;
     }
 
-    public static function getTopMenus()
+    public static function getTopMenus($userId, $route)
     {
-
+        $menus = self::getAssignedMenu($userId, $root = null, $callback = null, $refresh = false);
+        $topMenus = [];
+        foreach ($menus as $menu) {
+            unset($menu['submenuTemplate']);
+            unset($menu['options']);
+            if (!empty($menu['items'])) {
+                $menu['url'] = $menu['items'][0]['url'];
+                unset($menu['items']);
+            }
+            $topMenus[] = $menu;
+        }
+        return $topMenus;
     }
 }
