@@ -3,16 +3,14 @@
 /* @var $this \yii\web\View */
 /* @var $content string */
 
-use backend\assets\AppAsset;
+// use backend\assets\AppAsset;
+use backend\assets\Almasaeed2010Asset;
 use yii\helpers\Html;
-use yii\bootstrap\Nav;
-use yii\bootstrap\NavBar;
-use yii\widgets\Breadcrumbs;
 use common\widgets\Alert;
-use backend\components\Helper;
 use backend\components\MenuHelper;
 
-AppAsset::register($this);
+// AppAsset::register($this);
+Almasaeed2010Asset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -25,114 +23,55 @@ AppAsset::register($this);
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
-<body>
+<body class="sidebar-mini">
 <?php $this->beginBody() ?>
-<div class="wrap">
+<div class="wrapper">
+    <nav class="main-header navbar navbar-expand bg-white navbar-light border-bottom">
 
-  <!-- page-wrapper -->
-  <div class="page-wrapper toggled">
-
-    <!-- sidebar-wrapper  -->
-    <nav id="sidebar" class="sidebar-wrapper">
-      <div class="sidebar-content">
-        <div class="sidebar-brand">
-            <a href="#">pro sidebar</a>
-        </div>
-
-        <!-- sidebar-header  -->
-        <div class="sidebar-header">
-            <div class="user-pic">
-                <img class="img-responsive img-rounded" src="/img/user.jpg" alt="">
-            </div>
-            <div class="user-info">
-                <span class="user-name">Jhon <strong>Smith</strong></span>
-                <span class="user-role">Administrator</span>
-                <div class="user-status">                       
-                    <a href="#"><span class="label label-success">Online</span></a>                           
-                </div>
-            </div>
-        </div>
-
-        <!-- sidebar-menu  -->
         <?php
-          $leftMenu = MenuHelper::getLeftMenus(Yii::$app->user->id);
-          echo \backend\components\widgets\Menu::widget([
-            'items' => $leftMenu
-          ]);
+            $topMenu = MenuHelper::getTopMenus(Yii::$app->user->id);
+            if (!Yii::$app->user->isGuest) {
+                $topMenu[] = [
+                  'label' => Yii::$app->user->identity->username,
+                  'url' => ['/site/logout'],
+                ];
+            }
         ?>
-      </div><!-- sidebar-content  -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
+            </li>
 
-      <div class="sidebar-footer">
-          <a href="#">
-            <i class="fa fa-bell"></i>
-            <span class="label label-warning notification">3</span>
-          </a>
-          <a href="#">
-            <i class="fa fa-envelope"></i>
-            <span class="label label-success notification">7</span>
-          </a>
-          <a href="#"><i class="fa fa-gear"></i></a>
-          <a href="#"><i class="fa fa-power-off"></i></a>
-      </div>
+            <?php foreach ($topMenu as $key => $value) { ?>
+            <li class="nav-item d-sm-inline-block">
+                <a href="<?=$value['url'][0] ?>" class="nav-link"><?=$value['label'] ?></a>
+            </li>
+            <?php } ?>
+        </ul>
+
+        <!-- Right navbar links -->
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#">
+                    <i class="fa fa-th-large"></i>
+                </a>
+            </li>
+        </ul>
     </nav>
 
-    <!-- page-content" -->
-    <main class="page-content">
-      <nav class="navbar navbar-inverse layout-navbar">
-        <div class="container-fluid">
-          <i id="toggle-sidebar" class="toggle-sidebar glyphicon glyphicon-align-justify"></i>
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand layouts-navbar-brand" href="/"><?=Yii::$app->name?></a>
-          </div>
-          <div id="navbar" class="navbar-collapse collapse">
-            <!-- <form class="navbar-form navbar-right">
-              <input type="text" class="form-control" placeholder="Search...">
-            </form> -->
-            <?php
-                $topMenu = MenuHelper::getTopMenus(Yii::$app->user->id);
-
-                if (!Yii::$app->user->isGuest) {
-                    $topMenu[] = [
-                      'label' => Yii::$app->user->identity->username,
-                      'url' => ['/site/logout'],
-                    ];
-                }
-
-                echo Nav::widget([
-                  'items' => $topMenu,
-                  'options' => ['class' => 'navbar-nav'],
-                ]);
-            ?>
-          </div>
-        </div>
-      </nav>
-
-      <div class="container-fluid">
-        <?= Breadcrumbs::widget([
+    <?php $leftMenu = MenuHelper::getLeftMenus(Yii::$app->user->id); ?>
+    <?= $this->render('left.php', ['leftMenu' => $leftMenu]) ?>
+    <?= $this->render('right.php') ?>
+    <div class="content-wrapper">
+        <?= yii\widgets\Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
         <?= Alert::widget() ?>
-        <?= $content ?>
-      </div>
-
-      <footer class="footer">
-          <div class="container">
-              <p class="pull-left">&copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?></p>
-
-              <p class="pull-right"><?= Yii::powered() ?></p>
-          </div>
-      </footer>
-    </main>
-
-  </div>
+        <section class="content"><div class="container-fluid">
+            <?= $content ?>
+        </div></section>
+    </div>
 </div>
-
 <?php $this->endBody() ?>
 </body>
 </html>

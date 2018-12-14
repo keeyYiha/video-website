@@ -1,10 +1,17 @@
 
-后台管理源自：
+后台管理参考：
 -------------
 ```
 https://github.com/mdmsoft/yii2-admin
 ```
 
+CSS 参考：
+-------------
+```
+http://demo.cssmoban.com/cssthemes5/cpts_992_bmf.0-alpha/
+https://github.com/almasaeed2010/AdminLTE/tree/v3.0.0-alpha
+https://adminlte.io/
+```
 
 初始化第三方库：
 -------------

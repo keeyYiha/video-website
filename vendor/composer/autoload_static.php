@@ -74,6 +74,7 @@ class ComposerStaticInitc10858e22bc3d9aa110964e5954e962d
         ),
         'C' => 
         array (
+            'Composer\\Installers\\' => 20,
             'Codeception\\PHPUnit\\' => 20,
             'Codeception\\Extension\\' => 22,
             'Codeception\\' => 12,
@@ -182,6 +183,10 @@ class ComposerStaticInitc10858e22bc3d9aa110964e5954e962d
         'DeepCopy\\' => 
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
+        ),
+        'Composer\\Installers\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers',
         ),
         'Codeception\\PHPUnit\\' => 
         array (

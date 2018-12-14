@@ -11,18 +11,18 @@ class AppAsset extends AssetBundle
 {
     public $basePath = '@webroot';
     public $baseUrl = '@web';
-    // public $sourcePath = '@backend/static/';
 
     public $css = [
         'layouts/css/layouts.css',
-        // 'layouts/css/font-awesome.min.css',
-        // 'layouts/css/jquery.mCustomScrollbar.min.css',
+        'layouts/css/font-awesome.min.css',
+        'layouts/css/jquery.mCustomScrollbar.min.css',
     ];
     public $js = [
-        'layouts/js/custom.js',
-        'layouts/js/jquery.mCustomScrollbar.concat.min.js',
+        // 'layouts/js/custom.js',
+        // 'layouts/js/jquery.mCustomScrollbar.concat.min.js',
     ];
     public $depends = [
+        'backend\assets\Almasaeed2010Asset',
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapPluginAsset',
     ];

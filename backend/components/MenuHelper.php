@@ -206,8 +206,7 @@ class MenuHelper
                         'url' => static::parseRoute($menu['route']),
                     ];
                     if ($menu['children'] != []) {
-                        $item['submenuTemplate'] = "\n<ul class='sidebar-submenu'>\n{items}\n</ul>\n";
-                        $item['options'] = ['class' => 'sidebar-dropdown'];
+                        $item['submenuTemplate'] = "\n<ul class='nav nav-treeview'>\n{items}\n</ul>\n";
                         $item['items'] = $menu['children'];
                     }
                 }

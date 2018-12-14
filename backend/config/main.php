@@ -11,6 +11,9 @@ return [
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
+    'aliases' => [
+        '@almasaeed2010' => '@vendor/almasaeed2010',
+    ],
     'modules' => [
         'admin' => ['class' => \backend\modules\admin\Module::class],
         'content' => ['class' => \backend\modules\content\Module::class],
