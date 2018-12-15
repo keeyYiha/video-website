@@ -4,13 +4,13 @@
 /* @var $content string */
 
 // use backend\assets\AppAsset;
-use backend\assets\Almasaeed2010Asset;
+use backend\assets\AppAsset;
 use yii\helpers\Html;
 use common\widgets\Alert;
 use backend\components\MenuHelper;
 
 // AppAsset::register($this);
-Almasaeed2010Asset::register($this);
+AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>

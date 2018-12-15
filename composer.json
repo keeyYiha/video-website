@@ -1,7 +1,12 @@
 {
     "name": "yiisoft/yii2-app-advanced",
     "description": "Yii 2 Advanced Project Template",
-    "keywords": ["yii2", "framework", "advanced", "project template"],
+    "keywords": [
+        "yii2",
+        "framework",
+        "advanced",
+        "project template"
+    ],
     "homepage": "http://www.yiiframework.com/",
     "type": "project",
     "license": "BSD-3-Clause",
@@ -18,7 +23,9 @@
         "yiisoft/yii2": "~2.0.6",
         "yiisoft/yii2-bootstrap": "~2.0.0",
         "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0",
-        "almasaeed2010/adminlte": "v3.0.0-alpha"
+        "almasaeed2010/adminlte": "v2.4.8",
+        "components/jqueryui": "1.12.1",
+        "dmstr/yii2-adminlte-asset": "3.0.0-alpha1"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
@@ -32,11 +39,5 @@
         "fxp-asset": {
             "enabled": false
         }
-    },
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://asset-packagist.org"
-        }
-    ]
+    }
 }

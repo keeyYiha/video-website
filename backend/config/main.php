@@ -12,6 +12,7 @@ return [
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
     'aliases' => [
+        '@jqueryui'      => '@vendor/components/jqueryui',
         '@almasaeed2010' => '@vendor/almasaeed2010',
     ],
     'modules' => [

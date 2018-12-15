@@ -24,8 +24,6 @@ class Almasaeed2010Asset extends AssetBundle
 
     ];
     public $js = [
-        'plugins/jquery/jquery.min.js',
-        'https://code.jquery.com/ui/1.12.1/jquery-ui.min.js',
         'plugins/bootstrap/js/bootstrap.bundle.min.js',
         'dist/js/adminlte.js',
     ];
