@@ -23,9 +23,9 @@
         "yiisoft/yii2": "~2.0.6",
         "yiisoft/yii2-bootstrap": "~2.0.0",
         "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0",
-        "almasaeed2010/adminlte": "v2.4.8",
+        "almasaeed2010/adminlte": "v3.0.0-alpha.2",
         "components/jqueryui": "1.12.1",
-        "dmstr/yii2-adminlte-asset": "3.0.0-alpha1"
+        "adyoi/glyphicons-css": "@dev"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

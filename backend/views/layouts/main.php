@@ -3,13 +3,11 @@
 /* @var $this \yii\web\View */
 /* @var $content string */
 
-// use backend\assets\AppAsset;
 use backend\assets\AppAsset;
 use yii\helpers\Html;
 use common\widgets\Alert;
 use backend\components\MenuHelper;
 
-// AppAsset::register($this);
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -62,10 +60,22 @@ AppAsset::register($this);
     <?php $leftMenu = MenuHelper::getLeftMenus(Yii::$app->user->id); ?>
     <?= $this->render('left.php', ['leftMenu' => $leftMenu]) ?>
     <?= $this->render('right.php') ?>
+
     <div class="content-wrapper">
-        <?= yii\widgets\Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1><?=$this->title?></h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <?= backend\components\widgets\Breadcrumbs::widget([
+                            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                        ]) ?>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
         <?= Alert::widget() ?>
         <section class="content"><div class="container-fluid">
             <?= $content ?>

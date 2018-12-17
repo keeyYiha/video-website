@@ -1,6 +1,5 @@
 <?php
 
-use backend\assets\AnimateAsset;
 use backend\assets\AppAsset;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
@@ -22,7 +21,6 @@ $this->title = Yii::t('rbac-admin', 'Assignment') . ' : ' . $userName;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('rbac-admin', 'Assignments'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $userName;
 
-AnimateAsset::register($this);
 YiiAsset::register($this);
 $opts = Json::htmlEncode([
     'items' => $model->getItems(),
@@ -32,7 +30,6 @@ $this->registerJs($this->render('_script.js'));
 $animateIcon = ' <i class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></i>';
 ?>
 <div class="assignment-index">
-    <h1><?=$this->title;?></h1>
 
     <div class="row">
         <div class="col-sm-5">

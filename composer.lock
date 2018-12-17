@@ -4,27 +4,54 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "6ef3cb76cb47e7fe265eae66ee2ad789",
+    "content-hash": "d5c1f081a8f4e5d58110915503fb0cdc",
     "packages": [
         {
-            "name": "almasaeed2010/adminlte",
-            "version": "v2.4.8",
+            "name": "adyoi/glyphicons-css",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/almasaeed2010/AdminLTE.git",
-                "reference": "d9e68301848a95dff2e2dbef6569e617a9b3fa30"
+                "url": "https://github.com/adyoi/Glyphicons-CSS.git",
+                "reference": "8af5d1ebbf9c4097f24629a91342c08c0443cb12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/almasaeed2010/AdminLTE/zipball/d9e68301848a95dff2e2dbef6569e617a9b3fa30",
-                "reference": "d9e68301848a95dff2e2dbef6569e617a9b3fa30",
+                "url": "https://api.github.com/repos/adyoi/Glyphicons-CSS/zipball/8af5d1ebbf9c4097f24629a91342c08c0443cb12",
+                "reference": "8af5d1ebbf9c4097f24629a91342c08c0443cb12",
                 "shasum": ""
             },
-            "require": {
-                "bower-asset/jquery": ">=1.9.0 <4.0.0",
-                "composer/installers": "1.*"
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "adyoi",
+                    "email": "adyoix@gmail.com"
+                }
+            ],
+            "description": "Glyphicons CSS",
+            "keywords": [
+                "glyphicons"
+            ],
+            "time": "2018-11-27T07:07:47+00:00"
+        },
+        {
+            "name": "almasaeed2010/adminlte",
+            "version": "v3.0.0-alpha.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/almasaeed2010/AdminLTE.git",
+                "reference": "7bf4139bae8b23aabae2ae78ff82a003ceadf5a4"
             },
-            "type": "template",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/almasaeed2010/AdminLTE/zipball/7bf4139bae8b23aabae2ae78ff82a003ceadf5a4",
+                "reference": "7bf4139bae8b23aabae2ae78ff82a003ceadf5a4",
+                "shasum": ""
+            },
+            "type": "library",
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
@@ -32,11 +59,11 @@
             "authors": [
                 {
                     "name": "Abdullah Almsaeed",
-                    "email": "abdullah@almsaeedstudio.com"
+                    "email": "support@adminlte.io"
                 }
             ],
             "description": "AdminLTE - admin control panel and dashboard that's based on Bootstrap 3",
-            "homepage": "https://adminlte.io/",
+            "homepage": "http://adminlte.io/",
             "keywords": [
                 "JS",
                 "admin",
@@ -48,7 +75,7 @@
                 "theme",
                 "web"
             ],
-            "time": "2018-07-15T18:48:11+00:00"
+            "time": "2018-05-05T21:54:11+00:00"
         },
         {
             "name": "bower-asset/bootstrap",
@@ -337,188 +364,6 @@
             ],
             "description": "jQuery UI is a curated set of user interface interactions, effects, widgets, and themes built on top of the jQuery JavaScript Library. Whether you're building highly interactive web applications or you just need to add a date picker to a form control, jQuery UI is the perfect choice.",
             "time": "2016-09-16T05:47:55+00:00"
-        },
-        {
-            "name": "composer/installers",
-            "version": "v1.6.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/composer/installers.git",
-                "reference": "cfcca6b1b60bc4974324efb5783c13dca6932b5b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/cfcca6b1b60bc4974324efb5783c13dca6932b5b",
-                "reference": "cfcca6b1b60bc4974324efb5783c13dca6932b5b",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "^1.0"
-            },
-            "replace": {
-                "roundcube/plugin-installer": "*",
-                "shama/baton": "*"
-            },
-            "require-dev": {
-                "composer/composer": "1.0.*@dev",
-                "phpunit/phpunit": "^4.8.36"
-            },
-            "type": "composer-plugin",
-            "extra": {
-                "class": "Composer\\Installers\\Plugin",
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Composer\\Installers\\": "src/Composer/Installers"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Kyle Robinson Young",
-                    "email": "kyle@dontkry.com",
-                    "homepage": "https://github.com/shama"
-                }
-            ],
-            "description": "A multi-framework Composer library installer",
-            "homepage": "https://composer.github.io/installers/",
-            "keywords": [
-                "Craft",
-                "Dolibarr",
-                "Eliasis",
-                "Hurad",
-                "ImageCMS",
-                "Kanboard",
-                "Lan Management System",
-                "MODX Evo",
-                "Mautic",
-                "Maya",
-                "OXID",
-                "Plentymarkets",
-                "Porto",
-                "RadPHP",
-                "SMF",
-                "Thelia",
-                "WolfCMS",
-                "agl",
-                "aimeos",
-                "annotatecms",
-                "attogram",
-                "bitrix",
-                "cakephp",
-                "chef",
-                "cockpit",
-                "codeigniter",
-                "concrete5",
-                "croogo",
-                "dokuwiki",
-                "drupal",
-                "eZ Platform",
-                "elgg",
-                "expressionengine",
-                "fuelphp",
-                "grav",
-                "installer",
-                "itop",
-                "joomla",
-                "kohana",
-                "laravel",
-                "lavalite",
-                "lithium",
-                "magento",
-                "majima",
-                "mako",
-                "mediawiki",
-                "modulework",
-                "modx",
-                "moodle",
-                "osclass",
-                "phpbb",
-                "piwik",
-                "ppi",
-                "puppet",
-                "pxcms",
-                "reindex",
-                "roundcube",
-                "shopware",
-                "silverstripe",
-                "sydes",
-                "symfony",
-                "typo3",
-                "wordpress",
-                "yawik",
-                "zend",
-                "zikula"
-            ],
-            "time": "2018-08-27T06:10:37+00:00"
-        },
-        {
-            "name": "dmstr/yii2-adminlte-asset",
-            "version": "3.0.0-alpha1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/dmstr/yii2-adminlte-asset.git",
-                "reference": "7cdb8870c98126cca6832804ee82fa34631bdd63"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-adminlte-asset/zipball/7cdb8870c98126cca6832804ee82fa34631bdd63",
-                "reference": "7cdb8870c98126cca6832804ee82fa34631bdd63",
-                "shasum": ""
-            },
-            "require": {
-                "almasaeed2010/adminlte": "^2.4.0",
-                "yiisoft/yii2": "2.*",
-                "yiisoft/yii2-bootstrap": "~2.0.0"
-            },
-            "suggest": {
-                "cebe/yii2-gravatar": "Display user icons",
-                "rmrevin/yii2-fontawesome": "Font icons"
-            },
-            "type": "yii2-extension",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "dmstr\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Tobias Munk",
-                    "email": "tobias@diemeisterei.de"
-                },
-                {
-                    "name": "Evgeniy Tkachenko",
-                    "email": "et.coder@gmail.com"
-                }
-            ],
-            "description": "AdminLTE backend theme asset bundle for Yii 2.0 Framework",
-            "keywords": [
-                "AdminLTE",
-                "admin",
-                "asset",
-                "backend",
-                "css",
-                "extension",
-                "less",
-                "theme",
-                "yii2"
-            ],
-            "time": "2018-09-03T05:16:07+00:00"
         },
         {
             "name": "doctrine/lexer",
@@ -1277,6 +1122,126 @@
             ],
             "description": "BDD assertion library for PHPUnit",
             "time": "2017-01-09T10:58:51+00:00"
+        },
+        {
+            "name": "composer/installers",
+            "version": "v1.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/installers.git",
+                "reference": "cfcca6b1b60bc4974324efb5783c13dca6932b5b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/composer/installers/zipball/cfcca6b1b60bc4974324efb5783c13dca6932b5b",
+                "reference": "cfcca6b1b60bc4974324efb5783c13dca6932b5b",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0"
+            },
+            "replace": {
+                "roundcube/plugin-installer": "*",
+                "shama/baton": "*"
+            },
+            "require-dev": {
+                "composer/composer": "1.0.*@dev",
+                "phpunit/phpunit": "^4.8.36"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Composer\\Installers\\Plugin",
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Composer\\Installers\\": "src/Composer/Installers"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kyle Robinson Young",
+                    "email": "kyle@dontkry.com",
+                    "homepage": "https://github.com/shama"
+                }
+            ],
+            "description": "A multi-framework Composer library installer",
+            "homepage": "https://composer.github.io/installers/",
+            "keywords": [
+                "Craft",
+                "Dolibarr",
+                "Eliasis",
+                "Hurad",
+                "ImageCMS",
+                "Kanboard",
+                "Lan Management System",
+                "MODX Evo",
+                "Mautic",
+                "Maya",
+                "OXID",
+                "Plentymarkets",
+                "Porto",
+                "RadPHP",
+                "SMF",
+                "Thelia",
+                "WolfCMS",
+                "agl",
+                "aimeos",
+                "annotatecms",
+                "attogram",
+                "bitrix",
+                "cakephp",
+                "chef",
+                "cockpit",
+                "codeigniter",
+                "concrete5",
+                "croogo",
+                "dokuwiki",
+                "drupal",
+                "eZ Platform",
+                "elgg",
+                "expressionengine",
+                "fuelphp",
+                "grav",
+                "installer",
+                "itop",
+                "joomla",
+                "kohana",
+                "laravel",
+                "lavalite",
+                "lithium",
+                "magento",
+                "majima",
+                "mako",
+                "mediawiki",
+                "modulework",
+                "modx",
+                "moodle",
+                "osclass",
+                "phpbb",
+                "piwik",
+                "ppi",
+                "puppet",
+                "pxcms",
+                "reindex",
+                "roundcube",
+                "shopware",
+                "silverstripe",
+                "sydes",
+                "symfony",
+                "typo3",
+                "wordpress",
+                "yawik",
+                "zend",
+                "zikula"
+            ],
+            "time": "2018-08-27T06:10:37+00:00"
         },
         {
             "name": "doctrine/instantiator",
@@ -3609,7 +3574,8 @@
     "aliases": [],
     "minimum-stability": "alpha",
     "stability-flags": {
-        "dmstr/yii2-adminlte-asset": 15
+        "almasaeed2010/adminlte": 15,
+        "adyoi/glyphicons-css": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

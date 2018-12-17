@@ -1,6 +1,5 @@
 <?php
 
-use backend\assets\AnimateAsset;
 use yii\helpers\Html;
 use yii\helpers\Json;
 use yii\web\YiiAsset;
@@ -16,7 +15,6 @@ $this->title = $model->name;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('rbac-admin', $labels['Items']), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 
-AnimateAsset::register($this);
 YiiAsset::register($this);
 $opts = Json::htmlEncode([
     'items' => $model->getItems(),
@@ -26,7 +24,6 @@ $this->registerJs($this->render('_script.js'));
 $animateIcon = ' <i class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></i>';
 ?>
 <div class="auth-item-view">
-    <h1><?=Html::encode($this->title);?></h1>
     <p>
         <?=Html::a(Yii::t('rbac-admin', 'Update'), ['update', 'id' => $model->name], ['class' => 'btn btn-primary']);?>
         <?=Html::a(Yii::t('rbac-admin', 'Delete'), ['delete', 'id' => $model->name], [

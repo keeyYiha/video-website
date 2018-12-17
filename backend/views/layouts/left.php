@@ -19,47 +19,5 @@
             ]);
         ?>
         </nav>
-
-        <nav class="mt-2">
-            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
-                <li class="nav-item">
-                    <a href="pages/widgets.html" class="nav-link">
-                        <i class="nav-icon fa fa-th"></i>
-                        <p>
-                            Widgets<span class="right badge badge-danger">New</span>
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link active">
-                        <i class="nav-icon fa fa-dashboard"></i>
-                        <p>
-                            Dashboard<i class="right fa fa-angle-left"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="./index.html">
-                                <i class="fa fa-circle-o nav-icon"></i>
-                                <p>Dashboard v1</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./index2.html">
-                                <i class="fa fa-circle-o nav-icon"></i>
-                                <p>Dashboard v2</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./index3.html">
-                                <i class="fa fa-circle-o nav-icon"></i>
-                                <p>Dashboard v3</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
     </div>
 </aside>
