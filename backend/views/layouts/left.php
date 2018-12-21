@@ -9,7 +9,9 @@
                 <img src="/img/user.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">Alexander Pierce</a>
+                <?php if (!Yii::$app->user->isGuest) { ?>
+                    <a href="#" class="d-block"><?=Yii::$app->user->identity->username?></a>
+                <?php } ?>
             </div>
         </div>
         <nav class="mt-2">

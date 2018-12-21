@@ -28,12 +28,6 @@ AppAsset::register($this);
 
         <?php
             $topMenu = MenuHelper::getTopMenus(Yii::$app->user->id);
-            if (!Yii::$app->user->isGuest) {
-                $topMenu[] = [
-                  'label' => Yii::$app->user->identity->username,
-                  'url' => ['/site/logout'],
-                ];
-            }
         ?>
         <ul class="navbar-nav">
             <li class="nav-item">
